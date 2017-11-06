@@ -6,7 +6,6 @@ USE chat;
 CREATE TABLE messages (
   id INTEGER AUTO_INCREMENT,
   message CHAR(250) NOT NULL,
-  createdAt CHAR(250) NOT NULL, -- COME BACK TO MAKE NOT NULL LATER
   updatedAt TIMESTAMP NULL DEFAULT NULL,
   id_ROOMS INTEGER NOT NULL,
   id_USERS INTEGER NOT NULL,
@@ -26,20 +25,10 @@ CREATE TABLE rooms (
   PRIMARY KEY (id)
 );
 
--- CREATE TABLE users_rooms (
---   id INTEGER NOT NULL AUTO_INCREMENT,
---   id_USERS INTEGER NOT NULL,
---   id_ROOMS INTEGER NOT NULL,
---   PRIMARY KEY ('id');
--- );
 
-
-/* Create other tables and define schemas for them here! */
 
 ALTER TABLE messages ADD FOREIGN KEY (id_ROOMS) REFERENCES rooms(id);
 ALTER TABLE messages ADD FOREIGN KEY (id_USERS) REFERENCES users(id);
--- ALTER TABLE `users_rooms` ADD FOREIGN KEY (id_USERS) REFERENCES `users` (`id`);
--- ALTER TABLE `users_rooms` ADD FOREIGN KEY (id_ROOMS) REFERENCES `rooms` (`id`);
 
 
 
