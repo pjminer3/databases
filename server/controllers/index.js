@@ -3,8 +3,10 @@ var models = require('../models');
 module.exports = {
   messages: {
     get: function (req, res) {
+      console.log(req);
       models.messages.get(function(queryResults) {
-        console.log('Our controller query worked: ', queryResults);
+        // What am I supposed to do here?
+
       });
     }, // a function which handles a get request for all messages
     post: function (req, res) {
@@ -20,5 +22,6 @@ module.exports = {
 };
 
 // TESTING
-module.exports.messages.get();
+module.exports.Xmessages.get()
+;
 
